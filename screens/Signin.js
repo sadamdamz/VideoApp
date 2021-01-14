@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
-  View,
   SafeAreaView,
-  Image
+  ScrollView
 } from "react-native";
 import { Button } from "../components/index";
 import { Block } from "galio-framework";
-import { Images, Theme } from "../constants";
-import { Input } from "../components"
+import { Theme } from "../constants";
+import { Input } from "../components";
 
 class Signin extends Component {
 
@@ -18,26 +17,30 @@ class Signin extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
     return (
-      <View style={styles.appContainer}>
+      <Block style={styles.appContainer}>
         <SafeAreaView style={styles.safeArea}>
-          <View style={styles.container}>
+          <Block style={styles.container}>
             <Button
               size="small"
+              onPress={()=>navigation.navigate('Joinmeeting')}
               style={styles.joinBtn}
             >
               <Text style={styles.txtColor}>Join A Meeting</Text>
             </Button>
-          </View>
-          <View style={styles.btnContainer}>
+          </Block>
+          <Block style={styles.btnContainer}>
+            <ScrollView>
             <Text>Email</Text>
-            <Input placeholder="Email" onChangeText={(e)=>handleChange(e,'name')}/>
+            <Input placeholder="Email" onChangeText={(e)=>this.handleChange(e,'name')}/>
             <Text>Password</Text>
-            <Input placeholder="Password" onChangeText={(e)=>handleChange(e,'password')}/>
+            <Input placeholder="Password" onChangeText={(e)=>this.handleChange(e,'password')}/>
             <Text style={styles.signTxt}>Sign Up</Text>
-          </View>
+            </ScrollView>
+          </Block>
         </SafeAreaView>
-      </View>
+      </Block>
     );
   }
 }

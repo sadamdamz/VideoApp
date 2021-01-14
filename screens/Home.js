@@ -25,6 +25,7 @@ class Home extends Component {
           <View style={styles.container}>
             <Button
               size="small"
+              onPress={()=>navigation.navigate('Joinmeeting')}
               style={styles.joinBtn}
             >
               <Text style={styles.txtColor}>Join A Meeting</Text>
@@ -33,7 +34,7 @@ class Home extends Component {
           <View style={styles.btnContainer}>
             <Block row >
               <Block>
-                <Button style={styles.signupBtn}>
+                <Button style={styles.signupBtn} onPress={()=>navigation.navigate('Signup')}>
                   <Text style={styles.signupTxt}>SIGN UP</Text>
                 </Button>
               </Block>

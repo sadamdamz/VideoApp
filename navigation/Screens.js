@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Home from "../screens/Home";
-import Signin from "../screens/Signin";
+import SignIn from "../screens/Signin";
+import SignUp from "../screens/Signup";
+import JoinMeeting from "../screens/JoinMeeting";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -12,7 +14,9 @@ class Screens extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
-          <Stack.Screen name="Signin" component={Signin} />
+          <Stack.Screen name="Signin" component={SignIn} options={{headerShown:false}} />
+          <Stack.Screen name="Signup" component={SignUp} />
+          <Stack.Screen name="Joinmeeting" component={JoinMeeting} />
         </Stack.Navigator>
       </NavigationContainer>
     );

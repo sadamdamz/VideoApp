@@ -10,11 +10,12 @@ import { Theme } from "../constants";
 class ArInput extends React.Component {
 
   handleText = (e) => {
+    console.log(e)
     this.props.onChangeText(e)
   }
 
   render() {
-    const { shadowless, success, error, primary,name } = this.props;
+    const { shadowless, success, error, primary,name,iconName } = this.props;
 
     const inputStyles = [
       styles.input,
@@ -30,12 +31,12 @@ class ArInput extends React.Component {
         placeholderTextColor={Theme.COLORS.MUTED}
         style={inputStyles}
         color={Theme.COLORS.HEADER}
-        onChangeText={(e)=>this.handleText(e,name)}
+        onChangeText={(e)=>this.handleText(e)}
         iconContent={
           <Icon
             size={14}
             color={Theme.COLORS.ICON}
-            name="link"
+            name={iconName}
             family="AntDesign"
           />
         }
@@ -63,7 +64,7 @@ ArInput.propTypes = {
 
 const styles = StyleSheet.create({
   input: {
-    borderRadius: 30,
+    borderRadius: 10,
     borderColor: Theme.COLORS.BORDER,
     height: 44,
     backgroundColor: '#FFFFFF'
