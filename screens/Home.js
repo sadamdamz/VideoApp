@@ -18,6 +18,7 @@ class Home extends Component {
       }
   }
   render() {
+    const { navigation } = this.props;
     return (
       <View style={styles.appContainer}>
         <SafeAreaView style={styles.safeArea}>
@@ -37,7 +38,7 @@ class Home extends Component {
                 </Button>
               </Block>
               <Block>
-              <Button style={styles.signinBtn}>
+              <Button style={styles.signinBtn} onPress={()=>navigation.navigate('Signin')}>
                   <Text style={styles.signinTxt}>SIGN IN</Text>
                 </Button>
               </Block>

@@ -1,12 +1,12 @@
-import React from 'react';
-import Home from "./screens/Home";
-import Signin from "./screens/Signin";
+import React, { Component } from 'react';
+import Screens from "./navigation/Screens";
 
-export default function App() {
-  return (
-    <>
-      {/* <Signin /> */}
-      <Home />
-    </>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Screens />
+    );
+  }
 }
+
+export default App;
