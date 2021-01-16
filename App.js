@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import Screens from "./navigation/Screens";
+import Navigation from "./navigation";
 
 class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
     return (
-      <Screens />
+      <Navigation />
     );
   }
 }

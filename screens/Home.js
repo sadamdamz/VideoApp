@@ -4,7 +4,8 @@ import {
   Text,
   View,
   SafeAreaView,
-  Image
+  Image,
+  TouchableOpacity
 } from "react-native";
 import { Button } from "../components/index";
 import { Block } from "galio-framework";
@@ -55,7 +56,9 @@ class Home extends Component {
               <Image source={Images.Google} style={styles.imgIcon}/>
               </Block>
               <Block>
-              <Image source={Images.Whatsapp} style={styles.imgIcon}/>
+                <TouchableOpacity onPress={()=>navigation.navigate('MeetingRoom')}>
+                <Image source={Images.Whatsapp} style={styles.imgIcon}/>
+                </TouchableOpacity>
               </Block>
             </Block>
             <Block>
